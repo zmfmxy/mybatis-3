@@ -1,4 +1,4 @@
-package org.apache.ibatis.demo.plugin;
+package com.luban.demo.plugin;
 
 import org.apache.ibatis.executor.statement.StatementHandler;
 import org.apache.ibatis.plugin.*;

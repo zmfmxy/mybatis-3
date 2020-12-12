@@ -1,4 +1,4 @@
-package org.apache.ibatis.demo;
+package com.luban.demo;
 
 public class Blog {
 

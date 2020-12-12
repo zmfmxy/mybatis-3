@@ -1,4 +1,4 @@
-package org.apache.ibatis.demo;
+package com.luban.demo;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -17,9 +17,9 @@ public class MybatisMain {
     SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
     SqlSession sqlSession = sqlSessionFactory.openSession();
-    Blog blog = sqlSession.selectOne("org.apache.ibatis.demo.BlogMapper.selectBlog", 1);
+    BlogMapper blogMapper = sqlSession.getMapper(BlogMapper.class);
+    Blog blog = blogMapper.selectBlog(1);
     System.out.println(blog);
-
 
   }
 }
