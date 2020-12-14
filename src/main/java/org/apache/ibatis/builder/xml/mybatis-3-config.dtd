@@ -16,6 +16,7 @@
        limitations under the License.
 
 -->
+<!--描述了标签的使用顺序  对应着官方文档-->
 <!ELEMENT configuration (properties?, settings?, typeAliases?, typeHandlers?, objectFactory?, objectWrapperFactory?, reflectorFactory?, plugins?, environments?, databaseIdProvider?, mappers?)>
 
 <!ELEMENT databaseIdProvider (property*)>

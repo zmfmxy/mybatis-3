@@ -15,14 +15,13 @@
  */
 package org.apache.ibatis.datasource.unpooled;
 
-import java.util.Properties;
-
-import javax.sql.DataSource;
-
 import org.apache.ibatis.datasource.DataSourceException;
 import org.apache.ibatis.datasource.DataSourceFactory;
 import org.apache.ibatis.reflection.MetaObject;
 import org.apache.ibatis.reflection.SystemMetaObject;
+
+import javax.sql.DataSource;
+import java.util.Properties;
 
 /**
  * @author Clinton Begin
@@ -35,6 +34,7 @@ public class UnpooledDataSourceFactory implements DataSourceFactory {
   protected DataSource dataSource;
 
   public UnpooledDataSourceFactory() {
+    //返回的datasource就是从这创建的
     this.dataSource = new UnpooledDataSource();
   }
 
