@@ -221,6 +221,12 @@ public class MapperBuilderAssistant extends BaseBuilder {
     return new Discriminator.Builder(configuration, resultMapping, namespaceDiscriminatorMap).build();
   }
 
+  /**
+   *  把一个sql标签封装成一个MappedStatement
+   *
+   *  @Author zhangmengfei
+   *  @Date 2020/12/15 10:55
+   */
   public MappedStatement addMappedStatement(
       String id,
       SqlSource sqlSource,

@@ -5,7 +5,12 @@
 <mapper namespace="com.luban.demo.BlogMapper">
 
   <select id="selectBlog" resultType="com.luban.demo.Blog">
-    select * from Blog where id = #{id}
+    select * from Blog
+    <where>
+      <if test="id !=null">
+        and id = ${id}
+      </if>
+    </where>
   </select>
 
 </mapper>

@@ -37,6 +37,7 @@ public class RawSqlSource implements SqlSource {
   private final SqlSource sqlSource;
 
   public RawSqlSource(Configuration configuration, SqlNode rootSqlNode, Class<?> parameterType) {
+    //调用SqlNode
     this(configuration, getSql(configuration, rootSqlNode), parameterType);
   }
 
@@ -44,7 +45,7 @@ public class RawSqlSource implements SqlSource {
     //把原始的sql转化为带?的sql
     SqlSourceBuilder sqlSourceParser = new SqlSourceBuilder(configuration);
     Class<?> clazz = parameterType == null ? Object.class : parameterType;
-    sqlSource = sqlSourceParser.parse(sql, clazz, new HashMap<>());
+    sqlSource = sqlSourceParser.parse (sql, clazz, new HashMap<>());
   }
 
   private static String getSql(Configuration configuration, SqlNode rootSqlNode) {
