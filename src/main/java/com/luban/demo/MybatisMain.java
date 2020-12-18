@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.Socket;
 
 public class MybatisMain {
 
@@ -19,6 +20,7 @@ public class MybatisMain {
     BlogMapper blogMapper = sqlSession.getMapper(BlogMapper.class);
     Blog blog = blogMapper.selectBlog(1);
     System.out.println(blog);
+
 
   }
 }

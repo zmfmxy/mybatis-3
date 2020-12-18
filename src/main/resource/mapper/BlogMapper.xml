@@ -4,9 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.luban.demo.BlogMapper">
 
-  <cache></cache>
-
-  <select id="selectBlog" resultType="com.luban.demo.Blog">
+  <select id="selectBlog" flushCache="true" resultType="com.luban.demo.Blog">
     select * from Blog where id = #{id}
    <!-- <where>
       <if test="id !=null">
