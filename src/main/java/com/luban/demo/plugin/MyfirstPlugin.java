@@ -2,11 +2,12 @@ package com.luban.demo.plugin;
 
 import org.apache.ibatis.executor.statement.StatementHandler;
 import org.apache.ibatis.plugin.*;
+import org.apache.ibatis.session.ResultHandler;
 
 import java.util.Properties;
 
 @Intercepts({
-  @Signature(type = StatementHandler.class,method = "parameterize",args = java.sql.Statement.class)
+  @Signature(type = StatementHandler.class,method = "query",args = {java.sql.Statement.class, ResultHandler.class})
 })
 public class MyfirstPlugin implements Interceptor {
 

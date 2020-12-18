@@ -41,6 +41,7 @@ public class RawSqlSource implements SqlSource {
     this(configuration, getSql(configuration, rootSqlNode), parameterType);
   }
 
+  //静态sql是在创建sql时进行解析  xml sql标签  和 #
   public RawSqlSource(Configuration configuration, String sql, Class<?> parameterType) {
     //把原始的sql转化为带?的sql
     SqlSourceBuilder sqlSourceParser = new SqlSourceBuilder(configuration);

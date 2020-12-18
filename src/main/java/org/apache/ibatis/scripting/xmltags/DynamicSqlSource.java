@@ -33,6 +33,7 @@ public class DynamicSqlSource implements SqlSource {
     this.rootSqlNode = rootSqlNode;
   }
 
+  //动态的sql  是在这一步操作  将<xml标签的所有标签  和  #{   ${   全部转化为jdbc可以使用的  sql
   @Override
   public BoundSql getBoundSql(Object parameterObject) {
     //可以对sql进行修改

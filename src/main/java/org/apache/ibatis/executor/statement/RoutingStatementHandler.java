@@ -31,6 +31,9 @@ import java.util.List;
 
 /**
  * @author Clinton Begin
+ *
+ * 来分配生成哪个StatementHandler
+ * 装饰器模式
  */
 public class RoutingStatementHandler implements StatementHandler {
 

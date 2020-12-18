@@ -15,3 +15,5 @@ mybatis通过解析mybatis-config.xml创建SqlSessionFactory时加载了数据�
 ![](微信截图_20201214105113.png)
 
 ![](微信截图_20201214105127.png)
+
+spring解析器

@@ -34,6 +34,7 @@ import java.util.List;
  */
 public class CachingExecutor implements Executor {
 
+  //装饰器模式   代表的意思
   private final Executor delegate;
   private final TransactionalCacheManager tcm = new TransactionalCacheManager();
 
@@ -80,18 +81,23 @@ public class CachingExecutor implements Executor {
 
   @Override
   public <E> List<E> query(MappedStatement ms, Object parameterObject, RowBounds rowBounds, ResultHandler resultHandler) throws SQLException {
-    //获取sql
-    //先根据sql的<where标签以及<if标签进行解析成完整的sql    然后再进行  #{  和 ${  替换
+
     BoundSql boundSql = ms.getBoundSql(parameterObject);
+
+
     CacheKey key = createCacheKey(ms, parameterObject, rowBounds, boundSql);
+
+
     return query(ms, parameterObject, rowBounds, resultHandler, key, boundSql);
   }
 
   @Override
   public <E> List<E> query(MappedStatement ms, Object parameterObject, RowBounds rowBounds, ResultHandler resultHandler, CacheKey key, BoundSql boundSql)
       throws SQLException {
+    //查询二级缓存
     Cache cache = ms.getCache();
     if (cache != null) {
+
       flushCacheIfRequired(ms);
       if (ms.isUseCache() && resultHandler == null) {
         ensureNoOutParams(ms, boundSql);

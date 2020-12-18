@@ -61,6 +61,7 @@ public class PreparedStatementHandler extends BaseStatementHandler {
     //用  Jdbc的PreparedStatement执行
     ps.execute();
     //进行参数封装
+    //这里面调用的一系列的方法都是    DefaultResultSetHandler的实现类的方法
     return resultSetHandler.handleResultSets(ps);
   }
 

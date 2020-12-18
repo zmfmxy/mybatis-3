@@ -48,8 +48,11 @@ public class ResultSetWrapper {
     final int columnCount = metaData.getColumnCount();
     //获取表的字段有几个把对一个的结构放在集合里面
     for (int i = 1; i <= columnCount; i++) {
+      //表的字段
       columnNames.add(configuration.isUseColumnLabel() ? metaData.getColumnLabel(i) : metaData.getColumnName(i));
+      //jdbc类型
       jdbcTypes.add(JdbcType.forCode(metaData.getColumnType(i)));
+      //java类型
       classNames.add(metaData.getColumnClassName(i));
     }
   }
