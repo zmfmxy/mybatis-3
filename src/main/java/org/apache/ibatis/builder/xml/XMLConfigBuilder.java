@@ -275,6 +275,22 @@ public class XMLConfigBuilder extends BaseBuilder {
     configuration.setDefaultSqlProviderType(resolveClass(props.getProperty("defaultSqlProviderType")));
   }
 
+  /**
+   * <environments default="development">
+   *     <environment id="development">
+   *         <transactionManager type="JDBC"/>
+   *         <dataSource type="com.luban.demo.core.MybatisDruidDataSource">
+   *             <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+   *             <property name="url" value="jdbc:mysql://127.0.0.1:3306/mybatis?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC"/>
+   *             <property name="username" value="root"/>
+   *             <property name="password" value="123456"/>
+   *         </dataSource>
+   *     </environment>
+   * </environments>
+   *
+   * <transactionManager type="JDBC"/>
+   *
+   */
   private void environmentsElement(XNode context) throws Exception {
     if (context != null) {
       if (environment == null) {

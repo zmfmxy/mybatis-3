@@ -6,11 +6,10 @@
 
   <select id="selectBlog" flushCache="true" resultType="com.luban.demo.Blog">
     select * from Blog where id = #{id}
-   <!-- <where>
-      <if test="id !=null">
-        and id = #{id}
-      </if>
-    </where>-->
   </select>
+
+  <insert id="addBlog" parameterType="com.luban.demo.Blog">
+    insert into blog (username,context) values (#{username},#{context})
+  </insert>
 
 </mapper>

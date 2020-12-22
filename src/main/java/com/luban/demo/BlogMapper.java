@@ -4,4 +4,6 @@ public interface BlogMapper {
 
   Blog selectBlog(Integer id);
 
+  Integer addBlog(Blog blog);
+
 }
