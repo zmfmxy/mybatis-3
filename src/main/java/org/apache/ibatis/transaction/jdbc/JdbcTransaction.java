@@ -139,7 +139,7 @@ public class JdbcTransaction implements Transaction {
     if (level != null) {
       connection.setTransactionIsolation(level.getLevel());
     }
-    autoCommit=true;    //修改自动提交
+    //autoCommit=true;    //修改自动提交
     setDesiredAutoCommit(autoCommit);
   }
 

@@ -24,6 +24,7 @@ public class MybatisMain {
     blog.setContext("宫锁心玉");
     Integer i = blogMapper.addBlog(blog);
     System.out.println(i);
+    sqlSession.rollback();
 
   }
 
